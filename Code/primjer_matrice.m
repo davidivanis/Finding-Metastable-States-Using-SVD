@@ -1,4 +1,4 @@
-%stohasti?ka matrica s tri metastabilna
+%stohasticka matrica s tri metastabilna
 
 A=[0.35 0.15 0.5 0 0 0 0 0 0 ;
    0.2 0.75 0.05 0 0 0 0 0 0 ;
@@ -16,7 +16,7 @@ for i=1:3
   E((i-1)*3+1:i*3,(i-1)*3+1:i*3)=-1+2*rand(3,3);
 end
 
-%perturbiramo A sa E i vratimo ju na stohasti?ku
+%perturbiramo A sa E i vratimo ju na stohasticku
 eps=0.5*1e-1;
 M=A+eps*E;
 
@@ -24,12 +24,12 @@ for i=1:9
   M(i,:)=M(i,:)/sum(M(i,:));
 end
 
-%svojstveni vektori i vrijednosti od M, prikazani grafi?ki
+%svojstveni vektori i vrijednosti od M, prikazani graficki
 
 [V,S,W]=eig(M);
-V=(1/V(1,1))*V; %da mi u prvom svojstvenom budu sve jedinice, zbog prikaza
+V=(1/V(1,1))*V;
 x=[1:9];
-xi=[x(1):0.001:x(end)]; %da plotam svojstvene kao glatki graf a ne to?ke
+xi=[x(1):0.001:x(end)];
 for i=1:3
   figure
   plot(x,V(:,i),'b*');
@@ -105,7 +105,7 @@ for i=1:3
 end
 
 
-%ispermutiram A, i na njoj testiram kod. Prikazujem po?etnu A, njenu permutaciju i rezultat algoritma grafi?kill
+%ispermutiram A, i na njoj testiram kod. Prikazujem pocetnu A, njenu permutaciju i rezultat algoritma graficki
 
 figure
 imagesc(M);
